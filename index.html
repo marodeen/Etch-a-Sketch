@@ -8,21 +8,31 @@
 </head>
 
 <body>
+    <h1>Etch-a-Sketch</h1>
+
+    <button>What size should the grid be?</button>
+        
     <script>
+        const btn = document.querySelector("button");
+        btn.addEventListener("click", () => {
+            let row = Number(prompt("What size would you like the height to be?"));
+            let col = Number(prompt("And the width?"));
+            generateGrid(row,col);
+            document.body.appendChild(container);
+        });
+            
         const container = document.createElement('div');
         container.classList.add('grid-container');
-
-        for (let i = 0; i < 256; i++) {
-            const cell = document.createElement('div');
-            cell.classList.add("grid-cell");
-            cell.textContent = "DIV";
-            container.appendChild(cell);
-
-            cell.addEventListener("mouseover", () => cell.style.backgroundColor = "red");
+        
+        function generateGrid(row, col){
+            for (let i = 0; i < (row * col); i++) {
+                const cell = document.createElement('div');
+                cell.classList.add("grid-cell");
+                cell.textContent = "CELL";
+                container.appendChild(cell);
+                cell.addEventListener("mouseover", () => cell.style.backgroundColor = "red");
+            }
         }
-
-        document.body.appendChild(container);
-
     </script>
 </body>
 
