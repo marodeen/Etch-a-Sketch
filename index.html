@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" , href="style.css">
+</head>
+
+<body>
+    <script>
+        const container = document.createElement('div');
+        container.classList.add('grid-container');
+
+        for (let i = 0; i < 256; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add("grid-cell");
+            cell.textContent = "DIV";
+            container.appendChild(cell);
+
+            cell.addEventListener("mouseover", () => cell.style.backgroundColor = "red");
+        }
+
+        document.body.appendChild(container);
+
+    </script>
+</body>
+
+</html>
